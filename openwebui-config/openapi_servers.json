@@ -1,11 +1,10 @@
 [
   {
-    "id": "supabase-mcp",
-    "name": "Supabase MCP Server",
+    "id": "mcpo server",
+    "name": "mcpo",
     "url": "http://mcpo-server:8000",
     "active": true,
     "headers": {
-
     }
   }
 ]
