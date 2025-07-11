@@ -1,0 +1,11 @@
+[
+  {
+    "id": "supabase-mcp",
+    "name": "Supabase MCP Server",
+    "url": "http://mcpo-server:8000",
+    "active": true,
+    "headers": {
+      "Authorization": "Bearer top-secret"
+    }
+  }
+]

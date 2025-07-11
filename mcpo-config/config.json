@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "command": "uvx",
+      "args": ["mcp-sharepoint"],
+      "env": {
+     	"SHP_ID_APP": "your-app-id",
+      	"SHP_ID_APP_SECRET": "your-app-secret",
+      	"SHP_SITE_URL": "https://your-tenant.sharepoint.com/sites/your-site",
+      	"SHP_DOC_LIBRARY": "Shared Documents/your-folder",
+      	"SHP_TENANT_ID": "your-tenant-id"
+      }
+    }
+  }
+}
