@@ -26,7 +26,10 @@ services:
     container_name: mcpo-server
     ports:
       - "8005:8000"
-#    environment:
+    environment:
+      - AZ_TENANT_ID=${AZ_TENANT_ID}
+      - AZ_CLIENT_ID=${AZ_CLIENT_ID}
+      - AZ_CLIENT_SECRET=${AZ_CLIENT_SECRET}
 #      - SUPABASE_ACCESS_TOKEN=${SUPABASE_ACCESS_TOKEN}
     command: [
       "--port", "8000",
@@ -35,6 +38,7 @@ services:
     ]
     volumes:
       - ./mcpo-config:/app/config
+      - ./mcp-sharepoint:/app/mcp-sharepoint
     networks:
       - webui-network
     restart: unless-stopped

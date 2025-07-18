@@ -1,20 +1,18 @@
 {
   "mcpServers": {
     "mcp-sharepoint": {
-      "command": "uvx",
-      "args": ["mcp-sharepoint"],
+      "command": "uvicorn",
+      "args": ["main:app", "--host", "0.0.0.0", "--port", "8000"],
+      "cwd": "/app/mcp-sharepoint",
       "env": {
-     	"SHP_ID_APP": "your-app-id",
-      	"SHP_ID_APP_SECRET": "your-app-secret",
-      	"SHP_SITE_URL": "https://your-tenant.sharepoint.com/sites/your-site",
-      	"SHP_DOC_LIBRARY": "Shared Documents/your-folder",
-      	"SHP_TENANT_ID": "your-tenant-id"
+        "AZ_TENANT_ID": "${AZ_TENANT_ID}",
+        "AZ_CLIENT_ID": "${AZ_CLIENT_ID}",
+        "AZ_CLIENT_SECRET": "${AZ_CLIENT_SECRET}"
       }
     },
     "mcp-time": {
       "command": "uvx",
       "args": ["mcp-server-time", "--local-timezone=America/New_York"]
     }
- 
   }
 }
