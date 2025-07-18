@@ -1,0 +1,18 @@
+FROM ghcr.io/open-webui/mcpo:main
+
+# Install Python dependencies
+RUN pip install fastmcp httpx msal fastapi uvicorn
+
+# Set working directory
+WORKDIR /app
+
+# Copy entrypoint script
+COPY --chmod=755 mcpo-entrypoint.sh /usr/local/bin/
+
+# Pass environment variables
+ENV AZ_TENANT_ID="${AZ_TENANT_ID}"
+ENV AZ_CLIENT_ID="${AZ_CLIENT_ID}"
+ENV AZ_CLIENT_SECRET="${AZ_CLIENT_SECRET}"
+
+ENTRYPOINT ["mcpo-entrypoint.sh"]
+CMD ["--port", "8000", "--config", "/app/config/config.json"]

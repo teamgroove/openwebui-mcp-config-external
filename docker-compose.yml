@@ -22,10 +22,13 @@ services:
     restart: unless-stopped
 
   mcpo-server:
-    image: ghcr.io/open-webui/mcpo:main
+    build:
+      context: .
+      dockerfile: Dockerfile.mcpo
     container_name: mcpo-server
     ports:
-      - "8005:8000"
+      - "8005:8000"  # MCPO server port (external:internal)
+      - "8001:8001"  # SharePoint MCP server port
     environment:
       - AZ_TENANT_ID=${AZ_TENANT_ID}
       - AZ_CLIENT_ID=${AZ_CLIENT_ID}
@@ -41,7 +44,7 @@ services:
       - ./mcp-sharepoint:/app/mcp-sharepoint
     networks:
       - webui-network
-    restart: unless-stopped
+    restart: always
 
 volumes:
   openwebui_data:

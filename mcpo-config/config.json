@@ -1,14 +1,8 @@
 {
   "mcpServers": {
-    "mcp-sharepoint": {
-      "command": "uvicorn",
-      "args": ["main:app", "--host", "0.0.0.0", "--port", "8000"],
-      "cwd": "/app/mcp-sharepoint",
-      "env": {
-        "AZ_TENANT_ID": "${AZ_TENANT_ID}",
-        "AZ_CLIENT_ID": "${AZ_CLIENT_ID}",
-        "AZ_CLIENT_SECRET": "${AZ_CLIENT_SECRET}"
-      }
+    "sharepoint-mcp": {
+      "url": "http://127.0.0.1:8001",
+      "type": "http"
     },
     "mcp-time": {
       "command": "uvx",
