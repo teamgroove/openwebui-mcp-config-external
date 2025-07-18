@@ -30,7 +30,7 @@ services:
 #      - SUPABASE_ACCESS_TOKEN=${SUPABASE_ACCESS_TOKEN}
     command: [
       "--port", "8000",
-      "--api-key", "top-secret",
+#      "--api-key", "top-secret",
       "--config", "/app/config/config.json"
     ]
     volumes:
