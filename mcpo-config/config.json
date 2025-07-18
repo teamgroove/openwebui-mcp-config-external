@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "supabase": {
+    "mcp-sharepoint": {
       "command": "uvx",
       "args": ["mcp-sharepoint"],
       "env": {
@@ -10,6 +10,11 @@
       	"SHP_DOC_LIBRARY": "Shared Documents/your-folder",
       	"SHP_TENANT_ID": "your-tenant-id"
       }
+    },
+    "mcp-time": {
+      "command": "uvx",
+      "args": ["mcp-server-time", "--local-timezone=America/New_York"]
     }
+ 
   }
 }

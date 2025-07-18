@@ -12,6 +12,9 @@ services:
     environment:
       - WEBUI_NAME=OpenWebUI with MCP
       - WEBUI_AUTH=false
+      - OLLAMA_BASE_URL=http://${OLLAMA_SERVER_IP}:11434
+      - OPENAI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai
     depends_on:
       - mcpo-server
     networks:
@@ -22,9 +25,9 @@ services:
     image: ghcr.io/open-webui/mcpo:main
     container_name: mcpo-server
     ports:
-      - "8000:8000"
-    environment:
-      - SUPABASE_ACCESS_TOKEN=${SUPABASE_ACCESS_TOKEN}
+      - "8005:8000"
+#    environment:
+#      - SUPABASE_ACCESS_TOKEN=${SUPABASE_ACCESS_TOKEN}
     command: [
       "--port", "8000",
       "--api-key", "top-secret",
